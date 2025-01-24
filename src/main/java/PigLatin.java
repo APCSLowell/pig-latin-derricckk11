@@ -53,7 +53,7 @@ public class PigLatin {
 	    System.out.println(newString + "ay");
 	  }
 
-    	if(findFirstVowel(sWord) == -1) {
+    	if(findFirstVowel(sWord) != -1) {
 	    return newString + "ay";
 	    }
 	    else {
