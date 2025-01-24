@@ -46,12 +46,18 @@ public class PigLatin {
     public String pigLatin(String sWord) {
         //precondition: sWord is a valid String of length greater than 0
         //postcondition: returns the pig latin equivalent of sWord
-        // more code should go here
-	    if(findFirstVowel(sWord) == -1) {
-		    return sWord + "ay";
+	if (findFirstVowel(sWord) >= 0) {
+	    String piece1 = new String(sWord.substring(0, 1));
+	    String piece2 = new String(sWord.substring(1, sWord.length()));
+	    String newString = new String(piece2 + piece1);
+	    System.out.println(newString + "ay");
+	  }
+
+    	if(findFirstVowel(sWord) == -1) {
+	    return sWord + "ay";
 	    }
 	    else {
 		return "ERROR!";
-	    }
+   	 }
     }
 }//end PigLatin class
