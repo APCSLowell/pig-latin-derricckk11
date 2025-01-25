@@ -46,9 +46,9 @@ public class PigLatin {
     public String pigLatin(String sWord) {
         //precondition: sWord is a valid String of length greater than 0
         //postcondition: returns the pig latin equivalent of sWord
-	if (findFirstVowel(sWord) >= 0) {
-	    String piece1 = new String(sWord.substring(0, 1));
-	    String piece2 = new String(sWord.substring(1, sWord.length()));
+	if (findFirstVowel(sWord) >= 0) { //if there is a vowel, 
+	    String piece1 = new String(sWord.substring(0, findFirstVowel(sWord))); //take the first non vowel letters and move it to the back
+	    String piece2 = new String(sWord.substring(findFirstVowel(sWord), sWord.length())); // keep the second part after the vowel. 
 	    String newString = new String(piece2 + piece1);
 	    System.out.println(newString + "ay");
 	  }
