@@ -73,6 +73,8 @@ public class PigLatin {
 	    }
 
 	    return sWord + "ay";
+
+    } //end of the piglatin string function
    	
 
 }//end PigLatin class
