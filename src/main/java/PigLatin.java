@@ -47,20 +47,32 @@ public class PigLatin {
         //precondition: sWord is a valid String of length greater than 0
         //postcondition: returns the pig latin equivalent of sWord
 
-	String newString = "";   
-	int indexFirstVowel = findFirstVowel(sWord);
-	if (findFirstVowel(sWord) >= 0) { //if there is a vowel, 
-	    String piece1 = new String(sWord.substring(0, findFirstVowel(sWord))); //take the first non vowel letters and move it to the back
-	    String piece2 = new String(sWord.substring(findFirstVowel(sWord), sWord.length())); // keep the second part after the vowel. 
-	    newString = piece2 + piece1 + "ay";
-	    return newString;
-	  }
+	String piece1 = new String(sWord.substring(0, 1)); //take the first non vowel letters and move it to the back
+	String pieceQU = newString(sWord.substring(0,2));
+	String piece2 = new String(sWord.substring(1, sWord.length())); // keep the second part after the vowel.
 
-    	if(findFirstVowel(sWord) == -1) {
-	    return sWord + "ay";
+	    if(piece1.equals("a") || piece1.equals("e") || piece1.equals("i") || piece1.equals("o") || piece1.equals("u")){
+		    return sWord + "way";
 	    }
-	    else {
-		return "ERROR!";
+
+
+	    if(pieceQU.equals("qu")){
+
+		String newQUstring = new String(sWord.substring(2, sWord.length()) + pieceQU + "ay");
+		return newQUstring; 
+		    
+	    }
+
+	    if(findFirstVowel(sWord) > 0){
+
+		String consonantCluster = sWord.substring(0, findFirstVowel(sWord));
+		String restOfTheWord = sWord.substring(findFirstVowel(sWord));
+		    return restOfTheWord + consonantCluster + "ay";
+		    
+		    
+	    }
+
+	    return sWord + "ay";
    	 }
     }
 }//end PigLatin class
