@@ -48,7 +48,7 @@ public class PigLatin {
         //postcondition: returns the pig latin equivalent of sWord
 
 	String piece1 = new String(sWord.substring(0, 1)); //take the first non vowel letters and move it to the back
-	String pieceQU = newString(sWord.substring(0,2));
+	String pieceQU = new String(sWord.substring(0,2));
 	String piece2 = new String(sWord.substring(1, sWord.length())); // keep the second part after the vowel.
 
 	    if(piece1.equals("a") || piece1.equals("e") || piece1.equals("i") || piece1.equals("o") || piece1.equals("u")){
